@@ -1,0 +1,4 @@
+- Terminal Emulator ==> [[Alacritty]]
+- Terminal Full Screen Emulator ==> [[eDEX-UI]]
+- Terminal Promt ==> [[Starship Cross-Shell Promt]]
+- Default Shell ==> [[Fish]]
