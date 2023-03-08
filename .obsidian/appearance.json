@@ -1,5 +1,11 @@
 {
   "accentColor": "",
   "cssTheme": "Obsidian Nord",
-  "theme": "system"
+  "theme": "system",
+  "textFontFamily": "JetBrainsMono Nerd Font",
+  "interfaceFontFamily": "JetBrainsMono Nerd Font",
+  "monospaceFontFamily": "JetBrainsMono Nerd Font Mono",
+  "baseFontSize": 16,
+  "nativeMenus": false,
+  "showViewHeader": true
 }

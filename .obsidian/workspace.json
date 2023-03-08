@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5a50112b511f9235",
+        "id": "95ed43b5521ed74b",
         "type": "tabs",
         "children": [
           {
-            "id": "6b9e90aa810478ae",
+            "id": "0ebb7eefc685d12b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "source",
+                "file": "Docs/Terminal Utilitys/Starship Cross-Shell Prompt.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -49,7 +49,7 @@
               "type": "search",
               "state": {
                 "query": "",
-                "matchingCase": false,
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 342.5
   },
   "right": {
     "id": "5e5754248a1a5cf1",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Docs/Terminal Utilitys/Starship Cross-Shell Prompt.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Docs/Terminal Utilitys/Starship Cross-Shell Prompt.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Docs/Terminal Utilitys/Starship Cross-Shell Prompt.md"
               }
             }
           }
@@ -133,8 +133,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,10 +145,38 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8a533944982c9b27",
+  "active": "0ebb7eefc685d12b",
   "lastOpenFiles": [
-    "JetBrains.md",
+    "Docs/Terminal Utilitys/Starship Cross-Shell Prompt.md",
+    "Docs/Terminal Configuration.md",
+    "Docs/Images/Starship Promt Configuration.png",
+    "Docs/Terminal Utilitys/NeoVim.md",
+    "Docs/Terminal Utilitys/pFetch.md",
+    "Docs/Terminal Utilitys/NvChad.md",
     "README.md",
+    "Docs/Shells/Fish.md",
+    "Docs/Images/Starship Promt.png",
+    "Docs/Images",
+    "a.out",
+    "Docs/Gnome/Extensions.md",
+    "Docs/Services/MariaDB.md",
+    "Docs/O.S/Linux Distributions/Fedora.md",
+    "Docs/O.S/Linux Distributions",
+    "Docs/Apps/Code Editors.md",
+    "Docs/Apps/Flameshot.md",
+    "Docs/Drivers/Optional/Logitech Options Unofficial.md",
+    "Untitled.canvas",
+    "Docs/Apps/eDEX-UI.md",
+    "Docs/Apps/Alacritty.md",
+    "Docs/Drivers/Optional/Logitech G-Hub Unofficial.md",
+    "Docs/Drivers/Neccesary Drivers/Realtek Wifi Card Driver.md",
+    "Docs/O.S/Windows 10 Home.md",
+    "Docs/O.S/Linux Distributions/Manjaro GNOME (Arch Linux).md",
+    "Docs/Drivers/Optional",
+    "Docs/Drivers/Neccesary Drivers",
+    "Docs/Drivers",
+    "().md",
+    "JetBrains.md",
     "Logi.md",
     "RTW.md"
   ]

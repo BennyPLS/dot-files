@@ -88,7 +88,7 @@ format = "with [$user]($style) in "
 
 # Clock Time Promt
 [time]
-disabled = true
+disabled = false
 
 # Hostname Promt
 [hostname]

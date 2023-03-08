@@ -1,4 +1,4 @@
 
-## config.fish 
-[config.fish](../fish/config.fish)
+# Configuration File
+![[Fish/config.fish]]
 

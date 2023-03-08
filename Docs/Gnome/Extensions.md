@@ -1,0 +1,17 @@
+- AppIndicator
+- ArcMenu
+- Aylur's Widgets
+- Blur my Shell
+- CLipboard Indicator
+- Color Picker
+- Gnome 4x UI Improvements
+- gSnap
+- Just Perfection
+- Native Windows Placements
+- Open Weather
+- Removable Drive Menu
+- Dash to Panel
+- Dash to Deck
+- Unite
+- windowsNavigator
+- X11 Gestures
