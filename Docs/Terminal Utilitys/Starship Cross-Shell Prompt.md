@@ -44,14 +44,15 @@ Content :
 ```Clink
 load(io.popen('starship init cmd'):read("*a"))()
 ```
-## Explanaition
+
+## Explanation
 
 For starters, my configuration is a 3-line prompt.
 
 ![[Starship Promt Configuration.png]]
 
-Firts line : `Benny-LenovoLeguion with benny in dot-files on  main [✘!?]`
-(hostname) with (user name) in (directory) on (Git, rust, js, etc.) and if the (sudo password is cached) and the (time) that took the last command to execute.
+First line : `Benny-LenovoLeguion with benny in dot-files on  main [✘!?]`
+(host-name) with (user name) in (directory) on (Git, Rust, JavaScript, etc.) and if the (sudo password is cached) and the (time) that took the last command to execute.
 
 Second line : ` 10% with `
 The second line is the level of the battery and the shell, (depending on the shell you are using will be a symbol or text).
