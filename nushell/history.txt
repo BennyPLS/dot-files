@@ -1,0 +1,9 @@
+exit
+$nu.env-path
+nvim 
+nvim $nu.env-path
+nvim $nu.config-path
+exit
+shell
+ls
+exit
