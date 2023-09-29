@@ -73,22 +73,8 @@ format = "[󱦟 $duration ](bold blue)"
 # Actual User Promt
 [username]
 show_always = true
-<<<<<<< HEAD
-format = "with [$user]($style) in "
-
-
-# Local IP Promt
-# [localip]
-# ssh_only = false
-# disabled = true
-
-# Clock Time Promt
-[time]
-disabled = false
-=======
 format = "[<$user/>]($style)"
-style = 'bright-yellow'
->>>>>>> 9820523 (Updated Starship Promt)
+style_user = 'bright-yellow'
 
 # Hostname Promt
 [hostname]
