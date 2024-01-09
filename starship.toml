@@ -172,7 +172,7 @@ symbol = "   "
 
 # Git Configuration Promt
 [git_branch]
-symbol = " "
+symbol = " "
 always_show_remote = true
 
 # Memory Usage 
@@ -196,7 +196,7 @@ symbol = " "
 symbol = " "
 
 [dart]
-symbol = " "
+symbol = "  "
 
 [docker_context]
 symbol = " "
@@ -294,7 +294,7 @@ symbol = "󰏗 "
 symbol = " "
 
 [python]
-symbol = " "
+symbol = "󰌠 "
 
 [rlang]
 symbol = "󰟔 "
@@ -307,3 +307,4 @@ symbol = " "
 
 [scala]
 symbol = " "
+

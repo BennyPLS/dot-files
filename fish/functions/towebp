@@ -1,0 +1,1 @@
+ls | grep '.png' | xargs -I {} sh -c 'cwebp "{}" -o "$(basename {} .png).webp"'
