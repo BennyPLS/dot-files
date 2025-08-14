@@ -1,10 +1,8 @@
-
 ## Terminals Emulators
 
 - Terminal Emulator
 	- [[Alacritty]]
-- Terminal Full Screen Emulator
-	- [[eDEX-UI]]
+	- [[Gnome Terminal]]
 
 ## Terminal Utility's
 
@@ -15,8 +13,7 @@
 	- [[Fish]]
 
 - Terminal Applications
-	- Text Editor > [[NeoVim (Text Editor)]]
+	- Text Editor > [[NeoVim]]
 	- Pretty System Information > [[pFetch]]
-	- LS Replacement > [[Exa (LS Modern Replacement)]]
-	- File Manager > [[List Files {LF}]]
-	- Colorized Cat > [[Colorizing Cat {CCat}]]
+	- LS Replacement > [[Eza]]
+	- Bat > [[Bat]]

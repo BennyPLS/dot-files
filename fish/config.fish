@@ -4,12 +4,6 @@ starship init fish | source
 # Remove Welcome message
 set fish_greeting
 
-# Dart path
-set PATH $PATH /opt/flutter/bin/ $HOME/.pub-cache/bin
-export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
-# GPG keys
-set -gx GPG_TTY (tty)
-
 # Alias
 
 # ls, tree and cat replacements for the exa, exa --tree and ccat modern versions with extra config.
@@ -26,10 +20,6 @@ alias term='alacritty & disown'
 alias rterm='alacritty & disown | exit'
 
 # Logout GNOME SESSION
-alias  logoff='gnome-session-quit --no-prompt --logout'
-
-# Docker service control
-alias docker-init='sudo systemctl start docker.service'
-alias docker-stop='sudo systemctl stop docker.service'
+alias logoff='gnome-session-quit --no-prompt --logout'
 
 pfetch
