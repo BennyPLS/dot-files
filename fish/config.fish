@@ -1,25 +1,29 @@
-# Starship theme
-starship init fish | source
+# Shared environment, including noninteractive shells.
+fish_add_path --global "$HOME/.local/bin"
 
-# Remove Welcome message
-set fish_greeting
+if not status is-interactive
+    return
+end
 
-# Alias
+set -g fish_greeting
 
-# ls, tree and cat replacements for the exa, exa --tree and ccat modern versions with extra config.
-alias ls='exa -hg --grid --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
-alias ll='exa -lhg --grid --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
-alias hls='exa --all -hg --grid --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
-alias hll='exa --all -lhg --grid --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
-alias tree='exa --tree -hg --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
-alias cat='bat --style plain'
-alias bcat='bat'
+if type -q eza
+    alias ls='eza -hg --grid --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
+    alias ll='eza -lhg --grid --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
+    alias hls='eza --all -hg --grid --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
+    alias hll='eza --all -lhg --grid --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
+    alias tree='eza --tree -hg --time-style=long-iso --ignore-glob="System Volume Information|?RECYCLE.BIN" --icons --git'
+end
 
-# Alacritty Terminal Alias
-alias term='alacritty & disown'
-alias rterm='alacritty & disown | exit'
+if type -q bat
+    alias cat='bat --style plain'
+    alias bcat='bat'
+end
 
-# Logout GNOME SESSION
-alias logoff='gnome-session-quit --no-prompt --logout'
+if type -q claude
+    alias claude='command claude --dangerously-skip-permissions'
+end
 
-pfetch
+if type -q starship
+    starship init fish | source
+end

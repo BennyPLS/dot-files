@@ -159,3 +159,7 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+
+# Fish runtime state belongs to each machine.
+fish/fish_variables
+fish/fish_history
