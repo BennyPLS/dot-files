@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+set -euo pipefail
+export PATH=/usr/bin:/bin
+export HOME=/root
+export GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null
+unset BASH_ENV ENV CDPATH GIT_DIR GIT_WORK_TREE
+[[ $EUID -eq 0 ]] || { echo 'Run as root.' >&2; exit 1; }
+source_url=https://github.com/vinceliuice/Graphite-gtk-theme.git
+state=/var/lib/graphite-gdm
+target=/usr/share/gnome-shell/gnome-shell-theme.gresource
+for tool in git sassc glib-compile-resources python gnome-shell systemd-run flock; do
+    command -v "$tool" >/dev/null || { echo "Missing dependency: $tool" >&2; exit 1; }
+done
+[[ -f "$target" ]] || { echo 'GNOME Shell resource is missing.' >&2; exit 1; }
+install -d -m 700 "$state"
+exec 9>"$state/lock"
+flock 9
+work=$(mktemp -d "$state/build-XXXXXX")
+backup=$(mktemp -d "$state/backup-$(date +%Y%m%d-%H%M%S)-XXXXXX")
+cp -a "$target" "$backup/gnome-shell-theme.gresource"
+pacman -Q gnome-shell > "$backup/package-version.txt"
+changed=false
+cleanup() {
+    local result=$?
+    if ((result != 0)); then touch "$backup/failed"; fi
+    if ((result != 0)) && $changed; then
+        cp -a "$backup/gnome-shell-theme.gresource" "$target"
+        echo "Graphite rebuild failed. Restored the pre-build resource from $backup." >&2
+    fi
+    # The downloaded source lives only inside the work directory.
+    rm -rf -- "$work"
+}
+trap cleanup EXIT
+# Upstream edits its Sass sources, so download a fresh root-owned copy for this rebuild.
+git -c core.hooksPath=/dev/null clone --depth 1 "$source_url" "$work/source"
+chown -R root:root "$work/source"
+chmod -R go-w "$work/source"
+git -C "$work/source" rev-parse HEAD > "$backup/source-commit.txt"
+[[ -f "$work/source/install.sh" ]] || { echo 'Downloaded Graphite source has no install.sh.' >&2; exit 1; }
+changed=true
+# Isolate upstream's fixed /tmp paths; no network or home-directory access is needed.
+systemd-run --quiet --wait --pipe --collect \
+    --property=PrivateTmp=yes --property=PrivateNetwork=yes --property=ProtectHome=yes \
+    --property="WorkingDirectory=$work/source" \
+    /usr/bin/env -i PATH=/usr/bin:/bin HOME=/root \
+    /usr/bin/bash "$work/source/install.sh" -g -t red -c dark --tweaks nord rimless
+[[ -s "$target" ]]
+python - "$target" <<'PYRESOURCE'
+import sys
+from gi.repository import Gio
+resource = Gio.Resource.load(sys.argv[1])
+assert resource.enumerate_children('/', Gio.ResourceLookupFlags.NONE)
+PYRESOURCE
+# A cleanup error must not roll back an otherwise successful rebuild.
+changed=false
+touch "$backup/success"
+if ! python /usr/local/libexec/graphite-gdm-prune.py; then
+    echo 'GDM theme rebuilt, but backup cleanup failed. Existing backups were retained where possible.' >&2
+fi
+echo "Graphite GDM theme rebuilt. Backup: $backup"

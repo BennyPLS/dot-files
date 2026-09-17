@@ -1,0 +1,14 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/share/gnome-shell/gnome-shell-theme.gresource
+
+[Action]
+Description = Rebuilding Graphite Nord red dark rimless GDM theme...
+When = PostTransaction
+Depends = git
+Depends = sassc
+Depends = glib2
+Depends = python-gobject
+Exec = /usr/local/libexec/graphite-gdm-apply

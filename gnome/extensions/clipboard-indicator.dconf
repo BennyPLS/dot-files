@@ -1,0 +1,11 @@
+[/]
+cache-size=10
+clear-history=@as []
+clear-on-boot=true
+enable-keybindings=true
+history-size=50
+next-entry=@as []
+paste-on-select=false
+prev-entry=@as []
+private-mode-binding=@as []
+toggle-menu=['<Control><Alt>v']

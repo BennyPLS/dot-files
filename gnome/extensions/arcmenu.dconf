@@ -1,0 +1,9 @@
+[/]
+hide-overview-on-startup=true
+menu-button-padding=8
+pinned-apps=[{'id': 'org.gnome.Nautilus.desktop'}, {'id': 'org.gnome.Terminal.desktop'}, {'id': 'gnome-extensions prefs arcmenu@arcmenu.com', 'name': 'ArcMenu Settings', 'icon': 'ArcMenu_ArcMenuIcon'}]
+runner-hotkey=['<Alt>space']
+runner-hotkey-open-primary-monitor=true
+runner-position='Centered'
+runner-show-frequent-apps=false
+search-entry-border-radius=(true, 25)
