@@ -45,7 +45,15 @@ def main():
             match = next((item for item in data.get("extensions", []) if item["uuid"] == uuid), None)
             release = match.get("shell_version_map", {}).get(major) if match else None
             if not release:
-                raise RuntimeError(f"No compatible release of {uuid} for GNOME {major}. Install a supported release or use --skip-extensions.")
+                # Some extensions (e.g. Unite) have no release tagged for the
+                # current GNOME on extensions.gnome.org yet still run when
+                # installed from upstream. Skip rather than abort the batch:
+                # the UUID stays enabled and its saved settings still apply.
+                if (installed / uuid).exists():
+                    print(f"Skipping {uuid}: no extensions.gnome.org release for GNOME {major}; keeping the installed version.", file=sys.stderr)
+                else:
+                    print(f"Skipping {uuid}: no extensions.gnome.org release for GNOME {major}. Install it manually (see Docs/Gnome Extensions.md); its saved settings are still applied.", file=sys.stderr)
+                continue
             url = "https://extensions.gnome.org/download-extension/" + urllib.parse.quote(uuid, safe="")
             url += ".shell-extension.zip?" + urllib.parse.urlencode({"version_tag": release["pk"]})
             archive = Path(temp) / (uuid + ".zip")
